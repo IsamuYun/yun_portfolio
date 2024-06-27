@@ -30,10 +30,10 @@ export default {
 .navbar-wapper {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 1em;
-  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 16px;
 }
 
 .navbar {
@@ -80,6 +80,7 @@ export default {
 }
 
 .white:hover {
-  background-color: #E0FFFF;
+  color: white;
+  background-color: rgba(65, 105, 241, 0.65);
 }
 </style>

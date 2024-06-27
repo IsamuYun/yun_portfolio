@@ -14,10 +14,10 @@ import { ref, computed } from 'vue';
 const router = useRouter();
 
 const items = ref([
-    {id: 1, image: 'src/assets/projects/project-hikvision-small.png', title: 'Hikvision Official Website', description: 'Hikvision Official Website'},
-    {id: 2, image: 'src/assets/projects/legacy-site-small.png', title: 'Hikvision Legacy Website', description: 'Hikvision Legacy Website'},
-    {id: 3, image: 'src/assets/projects/alc-ppp-small.png', title: 'ALC PPP Portal', description: 'ALC PPP Portal'},
-    {id: 4, image: 'src/assets/projects/rmdslab-small.png', title: 'RMDSLab AI Community', description: 'RMDSLab AI Community'}
+    {id: 1, image: 'src/assets/projects/thumbnails/hikvision-us-thumbnail.png', title: 'Hikvision Official Website', description: 'Hikvision Official Website'},
+    {id: 2, image: 'src/assets/projects/thumbnails/hikvision-us-legacy-thumbnail.png', title: 'Hikvision Legacy Website', description: 'Hikvision Legacy Website'},
+    {id: 3, image: 'src/assets/projects/thumbnails/alc-ppp-thumbnail.png', title: 'ALC PPP Portal', description: 'ALC PPP Portal'},
+    {id: 4, image: 'src/assets/projects/thumbnails/rmdsai-thumbnail.png', title: 'RMDSLab AI Community', description: 'RMDSLab AI Community'}
 ])
 
 const isHovered = ref(false);
@@ -51,8 +51,8 @@ const goToProject = (id) => {
 <style scoped>
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* 2列布局 */
-    grid-template-rows: repeat(2, 1fr);     /* 2行布局 */
+    grid-template-columns: repeat(4, 300px);  /* 4列布局 */
+    grid-template-rows: 1fr, 1fr;     /* 1行布局 */
     gap: 10px;    /* 格子之间的间隔 */
     justify-content: center; 
     align-items: center;
