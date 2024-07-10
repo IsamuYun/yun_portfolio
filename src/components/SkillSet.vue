@@ -9,7 +9,7 @@
             </div>
             <div class="skill-item">
                 <img src="../assets/icons/vue-js.png" alt="Vue.js" />
-                <p class="skill-description">Vue3</p>
+                <p class="skill-description">Vue</p>
             </div>
             <div class="skill-item">
                 <img src="../assets/icons/react-native.png" alt="React Native" />
@@ -131,6 +131,8 @@
     width: 64px;
     height: 64px;    
     object-fit: contain; /* 保持图片比例 */
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
 }
 
 .skill-description {

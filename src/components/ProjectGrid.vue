@@ -1,7 +1,7 @@
 <template>
     <div class="grid-container">
         <div v-for="item in items" :key="item.id" class="grid-item">
-            <img :src="item.image" :alt="item.title" :sytle="imageStyle" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave" @click="goToProject(item.id)" />
+            <img :src="item.image" :alt="item.title" @click="goToProject(item.id)" />
             <p class="item-description">{{ item.description }}</p>
         </div>
     </div>
@@ -14,28 +14,11 @@ import { ref, computed } from 'vue';
 const router = useRouter();
 
 const items = ref([
-    {id: 1, image: 'src/assets/projects/thumbnails/hikvision-us-thumbnail.png', title: 'Hikvision Official Website', description: 'Hikvision Official Website'},
-    {id: 2, image: 'src/assets/projects/thumbnails/hikvision-us-legacy-thumbnail.png', title: 'Hikvision Legacy Website', description: 'Hikvision Legacy Website'},
-    {id: 3, image: 'src/assets/projects/thumbnails/alc-ppp-thumbnail.png', title: 'ALC PPP Portal', description: 'ALC PPP Portal'},
-    {id: 4, image: 'src/assets/projects/thumbnails/rmdsai-thumbnail.png', title: 'RMDSLab AI Community', description: 'RMDSLab AI Community'}
+    {id: 1, image: 'src/assets/projects/thumbnails/hikvision-us-small.png', title: 'Hikvision Official Website', description: 'Hikvision Official Website'},
+    {id: 2, image: 'src/assets/projects/thumbnails/hikvision-us-legacy-small.png', title: 'Hikvision Legacy Website', description: 'Hikvision Legacy Website'},
+    {id: 3, image: 'src/assets/projects/thumbnails/alc-ppp-small.png', title: 'ALC PPP Portal', description: 'ALC PPP Portal'},
+    {id: 4, image: 'src/assets/projects/thumbnails/rmdslab-small.png', title: 'RMDSLab AI Community', description: 'RMDSLab AI Community'}
 ])
-
-const isHovered = ref(false);
-
-// 计算属性
-const imageStyle = computed(() => ({
-    transform: isHovered.value ? 'scale(1.2)' : 'scale(1)',
-    transition: 'transform 0.35s ease-in-out',
-}))
-
-// Methods
-const handleMouseEnter = () => {
-    isHovered.value = true;
-}
-
-const handleMouseLeave = () => {
-    isHovered.value = false;
-}
 
 const goToProject = (id) => {
     if (id == 1) {
@@ -51,9 +34,9 @@ const goToProject = (id) => {
 <style scoped>
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 300px);  /* 4列布局 */
-    grid-template-rows: 1fr, 1fr;     /* 1行布局 */
-    gap: 10px;    /* 格子之间的间隔 */
+    grid-template-columns: repeat(3, 400px);  /* 4列布局 */
+    grid-template-rows: 2fr, 1fr;     /* 1行布局 */
+    gap: 36px;    /* 格子之间的间隔 */
     justify-content: center; 
     align-items: center;
 }
@@ -65,24 +48,22 @@ const goToProject = (id) => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid black;
+    box-shadow: 5px 5px 8px 0px blue;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.grid-item:hover {
+    transform: scale(1.08);
 }
 
 .grid-item img {
-  width: 40vw; /* 图片宽度为容器的40% */
-  height: 40vh; /* 图片高度为容器的20% */
+  width: 390px; /* 图片宽度为容器的40% */
+  height: 190px; /* 图片高度为容器的20% */
   object-fit: contain; /* 保持图片比例 */
-}
-
-.hover-zoom {
-    transition: transform 0.3s ease-in-out;
-    width: 40%; /* 响应式宽度 */
-    height: auto;
-    transform: scale(1);
-
-}
-
-.hover-zoom:hover {
-    transform: scale(1.1); /* 放大效果 */
+  margin: 5px 5px 5px 5px;
 }
 
 .item-description {

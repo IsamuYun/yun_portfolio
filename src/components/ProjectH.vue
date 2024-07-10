@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Hikvision US Official Website</p>
+        <p class="text-3xl font-bold underline">Hikvision Official Website</p>
         
     </div>
     <NavBar />
